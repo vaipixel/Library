@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "图书馆订座",
+  "usingComponents": {
+    "home": "/components/home/home",
+    "appoint": "/components/appointRecord/appointRecord",
+    "me": "/components/me/me",
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
+  }
 }

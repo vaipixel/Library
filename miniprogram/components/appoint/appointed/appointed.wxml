@@ -1,0 +1,19 @@
+<!--components/appoint/appointed/appointed.wxml-->
+<view wx:if="{{records.length > 0}}" class="records">
+    <view wx:for="{{records}}" wx:key="_id" wx:for-item="record">
+        <view wx:if="{{records.length > 0}}" class="records">
+            <view wx:for="{{records}}" wx:key="_id" wx:for-item="record">
+                <view class="info">
+                    <text>{{record.library.name}}</text>
+                    <text>使用时间：{{record.time}}</text>
+                </view>
+                <view class="status">
+                    <text>违约</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <text>暂无记录</text>
+</view>

@@ -1,0 +1,14 @@
+/* components/appointRecord/appointRecord.wxss */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabs .tab {
+    width: 50%;
+    text-align: center;
+}
+
+.tabs .selected {
+    background: aqua;
+}

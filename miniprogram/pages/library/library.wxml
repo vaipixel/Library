@@ -1,0 +1,2 @@
+<!--miniprogram/pages/library/library.wxml-->
+<text>{{id}}</text>

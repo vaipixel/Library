@@ -1,0 +1,15 @@
+<!--components/appointRecord/appointRecord.wxml-->
+<view class="page">
+    <view class="tabs">
+        <view class="tab {{currentSelected === '进行中' ? 'selected' : ''}}" catch:tap="onTabChanged" data-tab="进行中">
+            <text>进行中</text>
+        </view>
+        <view  class="tab {{currentSelected === '已结束' ? 'selected' : ''}}" catch:tap="onTabChanged" data-tab="已结束">
+            <text>已结束</text>
+        </view>
+    </view>
+    <view class="content">
+        <appointing wx:if="{{currentSelected === '进行中'}}"></appointing>
+        <appointed wx:if="{{currentSelected === '已结束'}}"></appointed>
+    </view>
+</view>

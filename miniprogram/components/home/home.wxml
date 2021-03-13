@@ -1,0 +1,24 @@
+<!--components/home/home.wxml-->
+<view class="page">
+    <view class="title">
+        <text>当前位置：</text>
+        <view class="school">
+            <image class="icon" src="/assets/images/school_icon.png"></image>
+            <text>嘉兴学院</text>
+        </view>
+    </view>
+    <view class="libraries">
+        <navigator wx:for="{{libraries}}" wx:key="item" url="/pages/library/library?id={{item._id}}">
+            <view class="library">
+                <view class="info">
+                    <text>{{item.name}}</text>
+                    <view class="location">
+                        <image class="icon" src="/assets/images/location.svg"></image>
+                        <text class="distance">{{item.distance}}</text>
+                    </view>
+                </view>
+                <image class="next" src="/assets/images/next.svg"></image>
+            </view>
+        </navigator>
+    </view>
+</view>

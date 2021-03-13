@@ -1,0 +1,18 @@
+<!--components/appoint/appointing/appointing.wxml-->
+<view class="page">
+    <view wx:if="{{records.length > 0}}" class="records">
+        <view wx:for="{{records}}" wx:key="_id" wx:for-item="record">
+            <view class="info">
+                <text>{{record.library.name}}</text>
+                <text>使用时间：{{record.time}}</text>
+            </view>
+            <view class="actions">
+                <view catch:tap="signIn">签到</view>
+                <view>签退</view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <text>暂无记录</text>
+    </view>
+</view>

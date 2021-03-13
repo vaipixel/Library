@@ -1,0 +1,36 @@
+/* components/home/home.wxss */
+.school .icon {
+    width: 100rpx;
+    height: 100rpx;
+}
+.library {
+    height: 300rpx;
+    display: flex;
+    align-items: center;
+}
+
+.library .info {
+    width: 100%;
+}
+
+
+.location {
+    display: flex;
+}
+
+.location .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.location .distance {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    text-align: center;
+}
+
+
+.next {
+    width: 60rpx;
+    height: 60rpx;
+}

@@ -1,38 +1,20 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/library/library.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        currentIndex: 1,
-        index: [
-            {
-                "text": "主页",
-                "iconPath": "/assets/images/tab_home.svg",
-                "selectedIconPath": "/assets/images/tab_home_active.svg",
-                dot: true
-            },
-            {
-                "text": "预约记录",
-                "iconPath": "/assets/images/tab_appoint.svg",
-                "selectedIconPath": "/assets/images/tab_appoint_active.svg",
-                badge: 'New'
-            },
-            {
-                "text": "我的",
-                "iconPath": "/assets/images/tab_me.svg",
-                "selectedIconPath": "/assets/images/tab_me_active.svg",
-                badge: 'New'
-            }
-        ]
+        id: '',
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            id: options.id
+        })
     },
 
     /**
@@ -82,10 +64,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-    onTabChange(e) {
-        this.setData({
-            currentIndex: e.detail.index
-        })
     }
 })

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "appointing": "/components/appoint/appointing/appointing",
+    "appointed": "/components/appoint/appointed/appointed"
+  }
+}
