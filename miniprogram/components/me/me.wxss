@@ -1,1 +1,32 @@
 /* components/me/me.wxss */
+.userInfo {
+    display: flex;
+    padding: 30rpx;
+}
+
+.avatar {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40rpx;
+}
+
+.name {
+    font-size: 75rpx;
+    line-height: 90rpx;
+    font-weight: 520;
+}
+
+.character {
+    font-size: 35rpx;
+    line-height: 35rpx;
+    margin-top: 20rpx;
+}
+
+.actions{
+    margin-top: 50rpx;
+}

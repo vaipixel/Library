@@ -1,0 +1,6 @@
+
+page {
+    --primary-color: #07C160;
+    --booked-color: #38485A;
+    --unbooked-color: #187A99;
+}

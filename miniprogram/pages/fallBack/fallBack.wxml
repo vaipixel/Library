@@ -1,0 +1,15 @@
+<!--miniprogram/pages/fallBack/fallBack.wxml-->
+<view>
+    <mp-cells wx:if="{{thisMonth.length > 0}}" title="本月违约">
+        <mp-cell wx:for="{{thisMonth}}" wx:key="_id" value="{{item.library.name}} {{item.library.seat}}座" footer="{{item.date}}">
+        </mp-cell>
+    </mp-cells>
+    <mp-cells wx:if="{{history.length > 0}}" title="历史违约">
+        <mp-cell wx:for="{{history}}" wx:key="_id" value="{{item.library.name}} {{item.library.seat}}座" footer="{{item.date}}">
+        </mp-cell>
+    </mp-cells>
+
+    <view wx:if="{{thisMonth.length === 0 && history.length === 0}}">
+        <text>暂无违约记录</text>
+    </view>
+</view>

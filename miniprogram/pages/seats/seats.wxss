@@ -1,0 +1,64 @@
+/* miniprogram/pages/seats/seats.wxss */
+.page {
+
+}
+
+.tables {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.table {
+    width: 600rpx;
+    height: 300rpx;
+    border: 1px solid #38485A;
+}
+
+.table-wrap {
+    margin: 10rpx;
+}
+
+.seats {
+    display: flex;
+}
+
+.seat {
+    width: 100rpx;
+    height: 100rpx;
+    background: var(--unbooked-color);
+    margin: 10rpx;
+    border: 1px solid #90B0B7;
+}
+
+.index {
+    font-size: 40rpx;
+}
+
+.index-y {
+    position: fixed;
+    line-height: 110rpx;
+    margin-left: -50rpx;
+}
+
+.index-x-wrap {
+    position: fixed;
+    margin-top: 150rpx;
+    display: flex;
+}
+
+.index-x {
+    width: 100rpx;
+    margin: 10rpx;
+    text-align: center;
+}
+
+.booked {
+    background: var(--booked-color);
+}

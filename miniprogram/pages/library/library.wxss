@@ -1,1 +1,10 @@
 /* miniprogram/pages/library/library.wxss */
+.schedules {
+    display: flex;
+    overflow: scroll;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}

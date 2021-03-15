@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/seats/seats",
+    "pages/library/library",
     "pages/index/index",
-    "pages/library/library"
+    "pages/fallBack/fallBack"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

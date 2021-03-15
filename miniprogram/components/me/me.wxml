@@ -1,3 +1,19 @@
 <!--components/me/me.wxml-->
-<!-- 我的 -->
-<text>components/me/me.wxml</text>
+        <!-- 我的 -->
+<view class="page">
+    <view class="userInfo">
+        <image class="avatar" src="{{userAvatar}}"></image>
+        <view class="profile">
+            <text class="name">{{userName}}</text>
+            <text class="character">{{userCharacter}}</text>
+        </view>
+    </view>
+    <view class="actions">
+        <mp-cells>
+            <mp-cell link url="/pages/fallBack/fallBack" hover value="违约记录">
+                <image slot="icon" src="/assets/images/fallBack.svg"
+                       style="margin-right: 32rpx;vertical-align: middle;width:45rpx; height: 45rpx;"></image>
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>

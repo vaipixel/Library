@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        currentIndex: 1,
+        currentIndex: 2,
         index: [
             {
                 "text": "主页",

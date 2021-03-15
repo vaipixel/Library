@@ -8,7 +8,7 @@
         </view>
     </view>
     <view class="libraries">
-        <navigator wx:for="{{libraries}}" wx:key="item" url="/pages/library/library?id={{item._id}}">
+        <navigator wx:for="{{libraries}}" wx:key="item" url="/pages/library/library?libraryId={{item._id}}">
             <view class="library">
                 <view class="info">
                     <text>{{item.name}}</text>

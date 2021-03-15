@@ -1,2 +1,19 @@
 <!--miniprogram/pages/library/library.wxml-->
-<text>{{id}}</text>
+<view class="page">
+    <view class="schedules">
+        <view class="schedule" wx:for="{{days}}" wx:key="date" wx:for-item="day">
+            <view class="title">
+                <text>{{day.week}}</text>
+                <text>{{day.dateStr}}</text>
+            </view>
+            <view class="periods">
+                <navigator url="/pages/seats/seats?library={{libraryId}}&date={{day.date}}&period={{period}}"
+                           wx:for="{{day.periods}}" wx:key="period" wx:for-item="period">
+                    <view>
+                        {{period}}
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
