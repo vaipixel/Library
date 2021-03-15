@@ -3,12 +3,12 @@
     <view wx:if="{{records.length > 0}}" class="records">
         <view wx:for="{{records}}" wx:key="_id" wx:for-item="record">
             <view class="info">
-                <text>{{record.library.name}}</text>
+                <text>{{record.library.name}} {{record.library.seat}}座</text>
                 <text>使用时间：{{record.time}}</text>
             </view>
             <view class="actions">
-                <view catch:tap="signIn">签到</view>
-                <view>签退</view>
+                <view catch:tap="onCheckInTaped" data-record="{{record}}">签到</view>
+                <view catch:tap="checkOut" data-record="{{record}}">签退</view>
             </view>
         </view>
     </view>
@@ -16,3 +16,6 @@
         <text>暂无记录</text>
     </view>
 </view>
+<mp-dialog show="{{isCheckInInvalid}}" title="签到失败" buttons="{{dialogButtons}}" bindbuttontap="onCheckInInvalidDialogButtonTaped">
+<text>{{checkInInvalidMsg}}</text>
+</mp-dialog>
