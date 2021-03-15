@@ -5,25 +5,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-        currentIndex: 2,
+        currentIndex: 1,
         index: [
             {
                 "text": "主页",
                 "iconPath": "/assets/images/tab_home.svg",
                 "selectedIconPath": "/assets/images/tab_home_active.svg",
-                dot: true
             },
             {
                 "text": "预约记录",
                 "iconPath": "/assets/images/tab_appoint.svg",
                 "selectedIconPath": "/assets/images/tab_appoint_active.svg",
-                badge: 'New'
             },
             {
                 "text": "我的",
                 "iconPath": "/assets/images/tab_me.svg",
                 "selectedIconPath": "/assets/images/tab_me_active.svg",
-                badge: 'New'
             }
         ]
     },

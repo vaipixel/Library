@@ -190,5 +190,11 @@ Page({
     onSeatTaped(e) {
         let seat = e.currentTarget.dataset.seat;
         console.log(seat);
+        if (seat.booked) {
+            console.log('this seat had booked');
+            return;
+        }
+        // 开始预定
+        console.log('start book this seat');
     }
 })

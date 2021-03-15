@@ -4,7 +4,72 @@
     overflow: scroll;
 }
 
+.schedule {
+    width: 250rpx;
+    flex-shrink: 0
+}
+
 .title {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1rpx solid #EBEBEB;
+    box-shadow: 0 6rpx 4rpx #EBEBEB;
+    padding: 10rpx;
+}
+
+.week {
+    font-size: 35rpx;
+}
+
+.date {
+    font-size: 30rpx;
+    color: #C9C9C9;
+}
+
+.periods-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30rpx;
+}
+
+.periods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10rpx;
+    border: 5rpx solid #D5D5D5;
+}
+.period-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.period-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.period {
+    font-size: 35rpx;
+}
+
+.status {
+    font-size: 30rpx;
+    color: #D5D5D5;
+}
+
+.divider {
+    width: 80%;
+    height: 1rpx;
+    background: #EAEAEA;
 }

@@ -25,6 +25,7 @@
     font-size: 35rpx;
     line-height: 35rpx;
     margin-top: 20rpx;
+    color: #C9C9C9;
 }
 
 .actions{

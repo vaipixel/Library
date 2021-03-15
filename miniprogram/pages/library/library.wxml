@@ -3,16 +3,22 @@
     <view class="schedules">
         <view class="schedule" wx:for="{{days}}" wx:key="date" wx:for-item="day">
             <view class="title">
-                <text>{{day.week}}</text>
-                <text>{{day.dateStr}}</text>
+                <text class="week">{{day.week}}</text>
+                <text class="date">{{day.dateStr}}</text>
             </view>
-            <view class="periods">
-                <navigator url="/pages/seats/seats?library={{libraryId}}&date={{day.date}}&period={{period}}"
-                           wx:for="{{day.periods}}" wx:key="period" wx:for-item="period">
-                    <view>
-                        {{period}}
-                    </view>
-                </navigator>
+            <view class="periods-wrap">
+                <view class="periods">
+                    <navigator url="/pages/seats/seats?library={{libraryId}}&date={{day.date}}&period={{period}}"
+                               wx:for="{{day.periods}}" wx:key="period" wx:for-item="period">
+                        <view class="period-wrap">
+                        <view class="period-info">
+                            <text class="period">{{period.period}}</text>
+                            <text class="status">{{period.bookStatus}}</text>
+                        </view>
+                        <view class="divider" wx:if="{{index !== (day.periods.length - 1)}}"></view>
+                        </view>
+                    </navigator>
+                </view>
             </view>
         </view>
     </view>

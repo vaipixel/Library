@@ -1,21 +1,24 @@
 <!--components/appoint/appointing/appointing.wxml-->
-<view class="page">
     <view wx:if="{{records.length > 0}}" class="records">
-        <view wx:for="{{records}}" wx:key="_id" wx:for-item="record">
+        <view class="record" wx:for="{{records}}" wx:key="_id" wx:for-item="record">
             <view class="info">
-                <text>{{record.library.name}} {{record.library.seat}}座</text>
-                <text>使用时间：{{record.time}}</text>
+                <text class="name">{{record.library.name}} {{record.library.seat}}座</text>
+                <text class="date">使用时间：{{record.time}}</text>
             </view>
             <view class="actions">
-                <view catch:tap="onCheckInTaped" data-record="{{record}}">签到</view>
-                <view catch:tap="checkOut" data-record="{{record}}">签退</view>
+                <view class="btn checkIn" catch:tap="onCheckInTaped" data-record="{{record}}">
+                    <text>签到</text>
+                </view>
+                <view class="btn checkOut" catch:tap="checkOut" data-record="{{record}}">
+                    <text>签退</text>
+                </view>
             </view>
         </view>
     </view>
     <view wx:else>
         <text>暂无记录</text>
     </view>
-</view>
-<mp-dialog show="{{isCheckInInvalid}}" title="签到失败" buttons="{{dialogButtons}}" bindbuttontap="onCheckInInvalidDialogButtonTaped">
-<text>{{checkInInvalidMsg}}</text>
+<mp-dialog show="{{isCheckInInvalid}}" title="签到失败" buttons="{{dialogButtons}}"
+           bindbuttontap="onCheckInInvalidDialogButtonTaped">
+    <text>{{checkInInvalidMsg}}</text>
 </mp-dialog>

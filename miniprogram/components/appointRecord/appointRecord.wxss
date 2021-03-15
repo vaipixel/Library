@@ -1,14 +1,40 @@
 /* components/appointRecord/appointRecord.wxss */
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .tabs {
+    width: 80%;
+    height: 80rpx;
     display: flex;
     justify-content: space-between;
+    background: var(--primary-color);
+    border-radius: 40rpx;
+    margin-top: 30rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.2);
 }
 
 .tabs .tab {
     width: 50%;
+    height: 80rpx;
+    line-height: 75rpx;
     text-align: center;
+    font-size: 35rpx;
+    color: aliceblue;
+    font-weight: normal;
+    border-radius: 40rpx;
 }
 
+
 .tabs .selected {
-    background: aqua;
+    background: white;
+    box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+    font-weight: 540;
+    color: black;
+}
+
+.content {
+    width: 100%;
 }

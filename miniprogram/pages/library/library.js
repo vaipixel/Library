@@ -6,6 +6,7 @@ Page({
      */
     data: {
         libraryId: '',
+        libraryName: 'dsafasd',
         days: []
     },
 
@@ -14,9 +15,13 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            libraryId: options.libraryId
+            libraryId: options.libraryId,
+            libraryName: options.libraryName
         });
         this.generateDays();
+        wx.setNavigationBarTitle({
+            title: this.data.libraryName
+        })
     },
 
     /**
@@ -68,12 +73,24 @@ Page({
 
     },
     generateDays() {
+
         let periods = [
-            '08:00-12:30',
-            '12:30-14:00',
-            '14:00-17:30',
-            '17:30-18:30',
-            '18:30-22:30',
+            {
+                period: '08:00-12:30',
+                bookStatus: '10/20'
+            }, {
+                period: '12:30-14:00',
+                bookStatus: '10/20'
+            }, {
+                period: '14:00-17:30',
+                bookStatus: '10/20'
+            }, {
+                period: '17:30-18:30',
+                bookStatus: '10/20'
+            }, {
+                period: '18:30-22:30',
+                bookStatus: '10/20'
+            },
         ]
         let days = [];
         let today = new Date();
@@ -87,7 +104,6 @@ Page({
                 periods
             })
         }
-        console.log(days);
         this.setData({
             days
         })

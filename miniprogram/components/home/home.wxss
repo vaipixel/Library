@@ -1,18 +1,61 @@
 /* components/home/home.wxss */
+.title {
+    position: relative;
+    display: flex;
+    height: 200rpx;
+    justify-content: center;
+    align-items: center;
+}
+
+.title .alert {
+    font-size: 35rpx;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 30rpx 0 0 30rpx;
+}
+
+.school {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+}
+
 .school .icon {
     width: 100rpx;
     height: 100rpx;
 }
+
+.school .name {
+    margin-left: 30rpx;
+    font-size: 50rpx;
+}
+
 .library {
-    height: 300rpx;
+    height: 250rpx;
     display: flex;
     align-items: center;
+    background: var(--primary-color);
+    margin: 30rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 10rpx 16rpx #BDD3E1;
+    padding: 20rpx;
 }
 
 .library .info {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.libraries .name {
+    font-size: 50rpx;
+    color: aliceblue;
+    font-weight: 530;
+}
 
 .location {
     display: flex;
@@ -27,6 +70,8 @@
     font-size: 30rpx;
     line-height: 40rpx;
     text-align: center;
+    margin-left: 10rpx;
+    color: aliceblue;
 }
 
 

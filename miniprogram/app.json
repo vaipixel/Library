@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/seats/seats",
-    "pages/library/library",
     "pages/index/index",
+    "pages/library/library",
+    "pages/seats/seats",
     "pages/fallBack/fallBack"
   ],
   "window": {
