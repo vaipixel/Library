@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "登录",
+  "navigationBarTitleText": "注册",
   "usingComponents": {
     "mp-form": "weui-miniprogram/form/form",
     "mp-cells": "weui-miniprogram/cells/cells",

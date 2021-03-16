@@ -1,6 +1,5 @@
-<!--miniprogram/pages/login/login.wxml-->
+<!--miniprogram/pages/register/register.wxml-->
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
-<mp-toptips msg="{{info}}" type="success" show="{{info}}"></mp-toptips>
 <view class="page">
     <mp-form>
         <mp-cells>
@@ -13,9 +12,6 @@
         </mp-cells>
     </mp-form>
     <view class="actions">
-        <navigator url="/pages/register/register">
-            <button type="primary" plain="true">注册</button>
-        </navigator>
-        <button class="weui-btn" type="primary" catch:tap="onLogin">登录</button>
+        <button class="weui-btn" type="primary" catch:tap="onRegister">注册</button>
     </view>
 </view>

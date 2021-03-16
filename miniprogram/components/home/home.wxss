@@ -33,7 +33,7 @@
 }
 
 .library {
-    height: 250rpx;
+    height: 230rpx;
     display: flex;
     align-items: center;
     background: var(--primary-color);

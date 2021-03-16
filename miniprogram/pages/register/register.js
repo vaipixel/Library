@@ -1,5 +1,5 @@
-// miniprogram/pages/login/login.js
-const {login} = require('../../requests');
+// miniprogram/pages/register/register.js
+const {register} = require('../../requests');
 const {isEmpty} = require('../../utils/str_utils');
 Page({
 
@@ -10,9 +10,9 @@ Page({
         userName: '',
         passwd: ''
     },
-
-    async onLogin() {
-        let error = ''
+    async onRegister() {
+        console.log(1231)
+        let error;
         if (isEmpty(this.data.passwd)) {
             error = '密码必填'
         }
@@ -23,25 +23,26 @@ Page({
             this.setData({
                 error: error
             });
+            console.log(231)
             return
         }
 
         wx.showLoading({
             mask: true
         });
-        let response = await login(this.data.userName, this.data.passwd);
+        let response = await register(this.data.userName, this.data.passwd);
         wx.hideLoading();
         if (response.code === 200) {
-            this.setData({
-                info: '登录成功'
-            });
             wx.setStorage({
                 key: 'userInfo',
                 data: response.data
             });
-            wx.redirectTo({
-                url: '/pages/index/index'
+            wx.showToast({
+                title: '注册成功'
             });
+            setTimeout(() => {
+                wx.navigateBack();
+            }, 500);
         } else {
             this.setData({
                 error: response.message

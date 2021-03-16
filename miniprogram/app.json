@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/login/login",
     "pages/library/library",
     "pages/seats/seats",
     "pages/noncompliance/noncompliance",
-    "pages/login/login"
+    "pages/register/register"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
