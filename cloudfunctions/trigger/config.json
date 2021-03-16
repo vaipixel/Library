@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+    {
+      "name": "checkInTrigger1",
+      "type": "timer",
+      "config": "0 5 8,14 * * * *"
+    },
+    {
+      "name": "checkInTrigger2",
+      "type": "timer",
+      "config": "0 35 12,17,18 * * * *"
+    },
+    {
+      "name": "checkOutTrigger1",
+      "type": "timer",
+      "config": "0 5 14 * * * *"
+    },
+    {
+      "name": "checkOutTrigger2",
+      "type": "timer",
+      "config": "0 35 12,17,18,22 * * * *"
+    }
+  ]
+}

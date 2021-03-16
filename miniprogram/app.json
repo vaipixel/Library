@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/library/library",
     "pages/seats/seats",
-    "pages/fallBack/fallBack"
+    "pages/noncompliance/noncompliance"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

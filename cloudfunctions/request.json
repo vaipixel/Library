@@ -1,0 +1,62 @@
+{
+  "login": {
+    "api": "login",
+    "data": {
+      "userName": "test",
+      "passwd": "123456"
+    }
+  },
+  "register": {
+    "api": "register",
+    "data": {
+      "userName": "test",
+      "passwd": "123456"
+    }
+  },
+  "getLibraries": {
+    "api": "getLibraries"
+  },
+  "appointSeat": {
+    "api": "appointSeat",
+    "data": {
+      "libraryId": "1",
+      "groupNumber": "1",
+      "seatNumber": "1",
+      "date": "Tue Mar 16 2021 15:21:46 GMT+0800 (China Standard Time)",
+      "period": "8:00-9:00",
+      "userId": "79550af2605048340a4d4df24ea23ce0"
+    }
+  },
+  "checkIn": {
+    "api": "checkIn",
+    "data": {
+      "appointId": "b00064a7605060130a4732603df5e0ca"
+    }
+  },
+  "checkOut": {
+    "api": "checkOut",
+    "data": {
+      "appointId": "b00064a7605060130a4732603df5e0ca"
+    }
+  },
+  "getNoncomplianceRecord": {
+    "api": "getNoncomplianceRecord",
+    "data": {
+      "userId": "79550af2605048340a4d4df24ea23ce0"
+    }
+  },
+  "getLibraryAppointInfo": {
+    "api": "getLibraryAppointInfo",
+    "data": {
+      "libraryId": "1"
+    }
+  },
+  "getLibrarySeatBookedInfo": {
+    "api": "getLibrarySeatBookedInfo",
+    "data": {
+      "libraryId": "1",
+      "date": "Tue Mar 16 2021 15:21:46 GMT+0800 (China Standard Time)",
+      "period": "8:00-9:00"
+    }
+  }
+}
