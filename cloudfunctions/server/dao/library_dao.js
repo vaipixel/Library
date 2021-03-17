@@ -16,6 +16,13 @@ class LibraryDao {
     async getLibraries() {
         return (await this._collection().get()).data;
     }
+
+    async getLibrary(id) {
+        let result = await this._collection()
+            .doc(id)
+            .get();
+        return result.data;
+    }
 }
 
 module.exports = LibraryDao;

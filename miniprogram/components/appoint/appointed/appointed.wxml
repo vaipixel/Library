@@ -2,19 +2,19 @@
 <view wx:if="{{records.length > 0}}" class="records">
     <view class="record" wx:for="{{records}}" wx:key="_id" wx:for-item="record">
         <view class="info">
-            <text class="name">{{record.library.name}} {{record.library.seat}}座</text>
-            <text class="date">使用时间：{{record.time}}</text>
+            <text class="name">{{record.library.name}} {{record.seat}}座</text>
+            <text class="date">使用时间：{{record.period}}</text>
         </view>
         <view class="actions">
-            <view class="btn checkIn">
+            <view class="btn checkIn" wx:if="{{record.status === 'finished'}}">
                 <text>已结束</text>
             </view>
-            <view class="btn checkOut">
+            <view class="btn checkOut" wx:if="{{record.status === 'noncompliance'}}">
                 <text>违约</text>
             </view>
         </view>
     </view>
 </view>
-<view wx:else>
+<view class="no-record" wx:else>
     <text>暂无记录</text>
 </view>

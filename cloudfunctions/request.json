@@ -58,5 +58,12 @@
       "date": "Tue Mar 16 2021 15:21:46 GMT+0800 (China Standard Time)",
       "period": "8:00-9:00"
     }
+  },
+  "getUserAppointRecords": {
+    "api": "getUserAppointRecords",
+    "data": {
+      "userId": "79550af2605048340a4d4df24ea23ce0",
+      "appointStatus": ["pending", "processing"]
+    }
   }
 }

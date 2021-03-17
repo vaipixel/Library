@@ -26,10 +26,11 @@ class AppointDao {
             date: _.eq(date),
             period: _.eq(period)
         }
+        console.log(query);
         let result = await this._collection()
             .where(query)
             .get();
-        console.log(result);
+        console.log(result)
         return result.data.length > 0;
     }
 
@@ -65,7 +66,11 @@ class AppointDao {
             query.userId = _.eq(userId);
         }
         if (status) {
-            query.status = _.eq(status);
+            if (status instanceof Array) {
+                query.status = _.in(status);
+            } else {
+                query.status = _.eq(status);
+            }
         }
         let result = await this._collection()
             .where(query)
@@ -97,6 +102,13 @@ class AppointDao {
                 date: _.eq(date),
                 period: _.eq(period)
             })
+            .get();
+        return result.data;
+    }
+
+    async getAppoint(id) {
+        let result = await this._collection()
+            .doc(id)
             .get();
         return result.data;
     }

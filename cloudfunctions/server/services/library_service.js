@@ -31,6 +31,10 @@ class LibraryService extends BaseService {
         date = dateUtils.coverDateWithoutTime(date);
         return services.appointService.querySeatBookedInfo({libraryId, date, period});
     }
+
+    async getLibraryInfo(id) {
+        return dao.libraryDao.getLibrary(id);
+    }
 }
 
 module.exports = LibraryService;

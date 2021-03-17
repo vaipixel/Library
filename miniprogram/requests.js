@@ -45,6 +45,10 @@ async function getLibrarySeatBookedInfo(query) {
     return baseRequest('getLibrarySeatBookedInfo', query)
 }
 
+async function getUserAppointRecords(userId, appointStatus) {
+    return baseRequest('getUserAppointRecords', {userId, appointStatus})
+}
+
 module.exports = {
     login: login,
     register: register,
@@ -54,5 +58,6 @@ module.exports = {
     checkOut: checkOut,
     getNoncomplianceRecord: getNoncomplianceRecord,
     getLibraryAppointInfo: getLibraryAppointInfo,
-    getLibrarySeatBookedInfo: getLibrarySeatBookedInfo
+    getLibrarySeatBookedInfo: getLibrarySeatBookedInfo,
+    getUserAppointRecords: getUserAppointRecords
 }

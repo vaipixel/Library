@@ -1,11 +1,2 @@
 /* components/appoint/appointing/appointing.wxss */
 @import "../appoint.wxss";
-.info {
-    display: flex;
-    flex-direction: column;
-}
-
-.actions {
-    display: flex;
-    justify-content: flex-end;
-}

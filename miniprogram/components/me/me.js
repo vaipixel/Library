@@ -1,4 +1,5 @@
 // components/me/me.js
+const userHolder = require('../../user_holder');
 Component({
   /**
    * 组件的属性列表
@@ -21,5 +22,14 @@ Component({
    */
   methods: {
 
+  },
+  lifetimes: {
+    async attached() {
+      let userInfo = await userHolder.getUserInfo();
+      this.setData({
+        userAvatar: userInfo.avatarUrl,
+        userName: userInfo.userName
+      })
+    }
   }
 })

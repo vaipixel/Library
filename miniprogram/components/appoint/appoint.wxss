@@ -9,7 +9,9 @@
 .records {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .record {
@@ -69,4 +71,9 @@
     background: #FF4747;
     color: aliceblue;
     margin-left: 30rpx;
+}
+
+.no-record {
+    text-align: center;
+    margin-top: 30rpx;
 }

@@ -1,23 +1,26 @@
 <!--components/appoint/appointing/appointing.wxml-->
-    <view wx:if="{{records.length > 0}}" class="records">
-        <view class="record" wx:for="{{records}}" wx:key="_id" wx:for-item="record">
-            <view class="info">
-                <text class="name">{{record.library.name}} {{record.library.seat}}座</text>
-                <text class="date">使用时间：{{record.time}}</text>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view wx:if="{{records.length > 0}}" class="records">
+    <view class="record" wx:for="{{records}}" wx:key="_id" wx:for-item="record">
+        <view class="info">
+            <text class="name">{{record.library.name}} {{record.seat}}座</text>
+            <text class="date">使用时间：{{record.period}}</text>
+        </view>
+        <view class="actions">
+            <view class="btn checkIn" wx:if="{{record.status === 'pending'}}" catch:tap="onCheckInTaped"
+                  data-record="{{record}}">
+                <text>签到</text>
             </view>
-            <view class="actions">
-                <view class="btn checkIn" catch:tap="onCheckInTaped" data-record="{{record}}">
-                    <text>签到</text>
-                </view>
-                <view class="btn checkOut" catch:tap="checkOut" data-record="{{record}}">
-                    <text>签退</text>
-                </view>
+            <view class="btn checkOut" wx:if="{{record.status === 'processing'}}" catch:tap="checkOut"
+                  data-record="{{record}}">
+                <text>签退</text>
             </view>
         </view>
     </view>
-    <view wx:else>
-        <text>暂无记录</text>
-    </view>
+</view>
+<view class="no-record" wx:else>
+    <text>暂无记录</text>
+</view>
 <mp-dialog show="{{isCheckInInvalid}}" title="签到失败" buttons="{{dialogButtons}}"
            bindbuttontap="onCheckInInvalidDialogButtonTaped">
     <text>{{checkInInvalidMsg}}</text>

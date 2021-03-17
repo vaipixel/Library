@@ -1,8 +1,9 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 cloud.init({
-    // env: cloud.DYNAMIC_CURRENT_ENV,
-    env: 'dev-0gwpl8mkeac5622f'
+    // env: cloud.DYNAMIC_CURRENT_ENV
+    // env: 'dev-0gwpl8mkeac5622f'
+    env: 'test-9ghj0zs4ab83d6ff',
 })
 
 const {inject, services} = require('./inject');
@@ -19,6 +20,8 @@ exports.main = async (event, context) => {
         code: 200,
         message: 'success'
     }
+    console.log(`api: ${api}`);
+    console.log(request);
     let data;
     try {
         switch (api) {
@@ -56,6 +59,9 @@ exports.main = async (event, context) => {
                 break;
             case 'getNoncomplianceRecord':
                 data = await services.appointService.getNoncomplianceRecord(request.userId);
+                break;
+            case 'getUserAppointRecords':
+                data = await services.appointService.getUserAppointRecords(request.userId, request.appointStatus);
                 break;
         }
         return {

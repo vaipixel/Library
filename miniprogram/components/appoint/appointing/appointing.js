@@ -1,4 +1,6 @@
 // components/appoint/appointing/appointing.js
+const {getUserAppointRecords, checkIn, checkOut} = require('../../../requests');
+const userHolder = require('../../../user_holder');
 Component({
     /**
      * 组件的属性列表
@@ -9,16 +11,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        records: [
-            {
-                library: {
-                    _id: '1',
-                    name: '梁林校区医学院图书馆',
-                    seat: '1-1'
-                },
-                time: '08:00-12:30'
-            }
-        ],
+        records: [],
         dialogButtons: [
             {
                 text: '取消'
@@ -28,7 +21,9 @@ Component({
             }
         ],
         isCheckInInvalid: false,
-        checkInInvalidMsg: ''
+        checkInInvalidMsg: '',
+        isLoading: false,
+        error: ''
     },
 
     /**
@@ -40,9 +35,9 @@ Component({
                 onlyFromCamera: true,
                 scanType: ['qrCode']
             });
-            let checkInResult = {};
+            let seatInfo = {};
             try {
-                checkInResult = JSON.parse(result.result);
+                seatInfo = JSON.parse(result.result);
             } catch (e) {
                 this.setData({
                     isCheckInInvalid: true,
@@ -50,8 +45,8 @@ Component({
                 });
                 return;
             }
-            if (checkInResult.library !== currentRecord.library._id
-                || checkInResult.seat !== currentRecord.library.seat) {
+            if (seatInfo.library !== currentRecord.libraryId
+                || seatInfo.seat !== currentRecord.seat) {
                 this.setData({
                     isCheckInInvalid: true,
                     checkInInvalidMsg: '座位错误，是否重试？'
@@ -59,7 +54,14 @@ Component({
                 return;
             }
             // check in
-            console.log('check in success');
+            this.showLoading();
+            let checkInResult = await checkIn(this.data.currentRecord._id);
+            if (checkInResult.code !== 200) {
+                this.setData({
+                    error: checkInResult.message
+                });
+            }
+            this.requestRecords();
         },
         onCheckInInvalidDialogButtonTaped(e) {
             this.setData({
@@ -77,8 +79,47 @@ Component({
             })
             this.checkIn(currentRecord)
         },
-        checkOut(e) {
-
+        async checkOut(e) {
+            let currentRecord = e.currentTarget.dataset.record;
+            this.setData({
+                currentRecord: currentRecord
+            })
+            this.showLoading();
+            let checkOutResult = await checkOut(this.data.currentRecord._id);
+            if (checkOutResult.code !== 200) {
+                this.setData({
+                    error: checkOutResult.message
+                });
+            }
+            this.requestRecords();
+        },
+        showLoading() {
+            if (this.data.isLoading) {
+                return
+            }
+            this.data.isLoading = true;
+            wx.showLoading({
+                mask: true
+            });
+        },
+        hideLoading() {
+            this.data.isLoading = false;
+            wx.hideLoading();
+        },
+        async requestRecords() {
+            this.showLoading();
+            let userId = await userHolder.getUserId();
+            let records = (await getUserAppointRecords(userId, ['pending', 'processing'])).data;
+            this.setData({
+                records
+            });
+            console.log(records);
+            this.hideLoading();
+        }
+    },
+    lifetimes: {
+        async attached() {
+            this.requestRecords();
         }
     }
 })

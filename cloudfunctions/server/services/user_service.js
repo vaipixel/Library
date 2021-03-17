@@ -20,7 +20,7 @@ class UserService extends BaseService {
         let user = {
             userName,
             passwd,
-            avatarUrl: ''
+            avatarUrl: '/assets/images/avatar.svg'
         }
         await dao.userDao.addUser(user);
         return 'success';

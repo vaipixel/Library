@@ -2,7 +2,8 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-    env: 'dev-0gwpl8mkeac5622f'
+    // env: 'dev-0gwpl8mkeac5622f'
+    env: cloud.DYNAMIC_CURRENT_ENV
 })
 
 const collection_name = 'appoint';

@@ -8,7 +8,7 @@
             </view>
             <view class="periods-wrap">
                 <view class="periods">
-                    <navigator url="/pages/seats/seats?library={{libraryId}}&date={{day.date}}&period={{period}}"
+                    <navigator url="/pages/seats/seats?libraryId={{libraryId}}&date={{day.date}}&period={{period.period}}"
                                wx:for="{{day.periods}}" wx:key="period" wx:for-item="period">
                         <view class="period-wrap">
                         <view class="period-info">
