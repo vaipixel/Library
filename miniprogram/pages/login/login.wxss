@@ -1,1 +1,11 @@
 /* miniprogram/pages/login/login.wxss */
+.actions {
+    margin-top: 50rpx;
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx;
+}
+
+.btn {
+    width: 45% !important;
+}

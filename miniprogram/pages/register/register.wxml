@@ -12,6 +12,6 @@
         </mp-cells>
     </mp-form>
     <view class="actions">
-        <button class="weui-btn" type="primary" catch:tap="onRegister">注册</button>
+        <button class="btn" type="primary" catch:tap="onRegister">注册</button>
     </view>
 </view>

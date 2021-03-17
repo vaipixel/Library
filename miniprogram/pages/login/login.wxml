@@ -13,9 +13,7 @@
         </mp-cells>
     </mp-form>
     <view class="actions">
-        <navigator url="/pages/register/register">
-            <button type="primary" plain="true">注册</button>
-        </navigator>
-        <button class="weui-btn" type="primary" catch:tap="onLogin">登录</button>
+        <button class="btn" catch:tap="goToRegister" type="primary" plain="true">注册</button>
+        <button class="btn" type="primary" catch:tap="onLogin">登录</button>
     </view>
 </view>

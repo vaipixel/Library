@@ -47,5 +47,10 @@ Page({
                 error: response.message
             });
         }
+    },
+    goToRegister() {
+        wx.navigateTo({
+            url: '/pages/register/register'
+        })
     }
 })
