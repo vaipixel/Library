@@ -4,7 +4,7 @@
         <text class="alert">当前位置：</text>
         <view class="school">
             <image class="icon" src="/assets/images/school_icon.png"></image>
-            <text class="name">嘉兴学院</text>
+            <image src="/assets/images/school_name.png" class="name"></image>
         </view>
     </view>
     <view class="libraries">
