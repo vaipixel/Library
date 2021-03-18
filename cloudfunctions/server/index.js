@@ -3,7 +3,7 @@ const cloud = require('wx-server-sdk')
 cloud.init({
     // env: cloud.DYNAMIC_CURRENT_ENV
     // env: 'dev-0gwpl8mkeac5622f'
-    env: 'test-9ghj0zs4ab83d6ff',
+    env: 'test-9gx7tprlf5646d97'
 })
 
 const {inject, services} = require('./inject');

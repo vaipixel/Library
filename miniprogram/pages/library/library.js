@@ -73,7 +73,7 @@ Page({
                     bookStatus: '0/20'
                 },
             ]
-            let date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+            let date = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i, 0, 0, 0, 0);
             days.push({
                 date: date.toString(),
                 dateStr: `${date.getMonth() + 1}-${date.getDate()}`,

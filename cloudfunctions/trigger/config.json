@@ -12,7 +12,7 @@
     {
       "name": "checkInTrigger2",
       "type": "timer",
-      "config": "0 35 12,17,18 * * * *"
+      "config": "0 34,35 12,17,18 * * * *"
     },
     {
       "name": "checkOutTrigger1",

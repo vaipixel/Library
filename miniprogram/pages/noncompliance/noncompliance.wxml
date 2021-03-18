@@ -1,11 +1,11 @@
 <!--miniprogram/pages/noncompliance/noncompliance.wxml-->
 <view>
     <mp-cells wx:if="{{thisMonth.length > 0}}" title="本月违约">
-        <mp-cell wx:for="{{thisMonth}}" wx:key="_id" value="{{item.library.name}} {{item.library.seat}}座" footer="{{item.formatDate}}">
+        <mp-cell wx:for="{{thisMonth}}" wx:key="_id" value="{{item.library.name}} {{item.seat}}座" footer="{{item.formatDate}}">
         </mp-cell>
     </mp-cells>
     <mp-cells wx:if="{{history.length > 0}}" title="历史违约">
-        <mp-cell wx:for="{{history}}" wx:key="_id" value="{{item.library.name}} {{item.library.seat}}座" footer="{{item.formatDate}}">
+        <mp-cell wx:for="{{history}}" wx:key="_id" value="{{item.library.name}} {{item.seat}}座" footer="{{item.formatDate}}">
         </mp-cell>
     </mp-cells>
 

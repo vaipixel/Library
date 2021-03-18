@@ -1,10 +1,11 @@
 // 云函数入口文件
-const cloud = require('wx-server-sdk')
+const cloud = require('wx-server-sdk');
 
 cloud.init({
     // env: 'dev-0gwpl8mkeac5622f'
-    env: cloud.DYNAMIC_CURRENT_ENV
-})
+    // env: cloud.DYNAMIC_CURRENT_ENV
+    env: 'test-9gx7tprlf5646d97'
+});
 
 const collection_name = 'appoint';
 
@@ -14,19 +15,19 @@ exports.main = async (event, context) => {
     switch (TriggerName) {
         // 整点签到检查
         case 'checkInTrigger1':
-            checkIn()
+            checkIn();
             break;
         //  半点签到检查
         case 'checkInTrigger2':
-            checkIn()
+            checkIn();
             break;
         //  整点签退检查
         case 'checkOutTrigger1':
-            checkOut()
+            checkOut();
             break;
         //  半点签退检查
         case 'checkOutTrigger2':
-            checkOut()
+            checkOut();
             break;
     }
 }
@@ -41,6 +42,11 @@ async function checkIn() {
             date: _.eq(_getTodayDate())
         })
         .get()).data;
+    console.log({
+        status: _.eq('pending'),
+        period: _.eq(_getCheckInPeriod()),
+        date: _.eq(_getTodayDate())
+    });
     let appointIds = queryResult.map(item => item._id);
     db.collection(collection_name)
         .where({

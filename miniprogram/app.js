@@ -12,7 +12,7 @@ App({
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
         // env: 'dev-0gwpl8mkeac5622f',
-        env: 'test-9ghj0zs4ab83d6ff',
+        env: 'test-9gx7tprlf5646d97',
         traceUser: true,
       })
     }
